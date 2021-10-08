@@ -1,0 +1,38 @@
+#This policy uses the Sentinel tfplan/v2 import to require that
+
+
+# Import tfplan-functions.sentinel
+# with alias "plan"
+import "tfplan-functions" as plan
+import "strings"
+import "types"
+
+allResources = plan.find_resources("google_bigquery_dataset")
+
+
+location_messages = {}
+for allResources as address, rc {
+    bigquery_location = plan.evaluate_attribute(rc.change.after, "location")
+    print(bigquery_location)
+    if types.type_of(bigquery_location) is null {
+        bq_location = plan.evaluate_attribute(rc, "location")
+        if not strings.has_prefix(bq_location,"us-") {
+            location_messages[address] = " region with value " + bq_location + " which is not allowed"
+        }
+    } else {
+
+        if bigquery_location is "US" {
+        print("abcd")
+        } else {
+            location_messages[address] = "Resource " + address + " has default region"
+
+        
+        }
+        
+    }
+}
+print(location_messages)
+
+location = rule { length(location_messages) is 0 }
+
+main = rule { location }
