@@ -6,3 +6,7 @@ mock "tfplan/v2" {
 module "tfplan-functions" {
     source = "./tfplan-functions.sentinel"
 }
+
+param "prefix" {
+    value = "us-"
+}
