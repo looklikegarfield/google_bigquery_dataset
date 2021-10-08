@@ -7,19 +7,19 @@ import "tfplan-functions" as plan
 import "strings"
 import "types"
 
-allResources = plan.find_resources("google_bigquery_dataset.location")
+allResources = plan.find_resources("google_bigquery_dataset")
 
 
 location_messages = {}
 for allResources as address, rc {
-	bigquery_location = plan.evaluate_attribute(rc.change.after_unknown, "location")
+	bigquery_location = plan.evaluate_attribute(rc, "location")
 	if types.type_of(bigquery_location) is "null" {
 		bq_location = plan.evaluate_attribute(rc, "location")
 		if not strings.has_prefix(bq_location,"us-") {
 			region_messages[address] = " region with value " + bq_location + " which is not allowed"
 		}
 	} else {
-		location_messages[address] = "Resource " + address + " has default region which is not allowed"
+		location_messages[address] = "Resource " + address + " has default region"
 	}
 }
 
