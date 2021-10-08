@@ -1,0 +1,312 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {},
+		"path": [],
+		"resources": {
+			"google_bigquery_dataset": {
+				"dataset": {
+					0: {
+						"applied": {
+							"access": [
+								{
+									"domain":         "",
+									"group_by_email": "",
+									"role":           "OWNER",
+									"special_group":  "",
+									"view":           [],
+								},
+								{
+									"domain":         "hashicorp.com",
+									"group_by_email": "",
+									"role":           "READER",
+									"special_group":  "",
+									"user_by_email":  "",
+									"view":           [],
+								},
+							],
+							"dataset_id":                       "example_dataset",
+							"default_encryption_configuration": [],
+							"default_partition_expiration_ms":  null,
+							"default_table_expiration_ms":      3600000,
+							"delete_contents_on_destroy":       false,
+							"description":                      "This is a test description",
+							"friendly_name":                    "test",
+							"labels": {
+								"env": "default",
+							},
+							"location": "US",
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"access.#": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"access.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"access.0.domain": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"access.0.group_by_email": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"access.0.role": {
+								"computed": false,
+								"new":      "OWNER",
+								"old":      "",
+							},
+							"access.0.special_group": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"access.0.user_by_email": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"access.0.view.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"access.1.%": {
+								"computed": false,
+								"new":      "6",
+								"old":      "",
+							},
+							"access.1.domain": {
+								"computed": false,
+								"new":      "hashicorp.com",
+								"old":      "",
+							},
+							"access.1.group_by_email": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"access.1.role": {
+								"computed": false,
+								"new":      "READER",
+								"old":      "",
+							},
+							"access.1.special_group": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"access.1.user_by_email": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"access.1.view.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"creation_time": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dataset_id": {
+								"computed": false,
+								"new":      "example_dataset",
+								"old":      "",
+							},
+							"default_encryption_configuration.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"default_partition_expiration_ms": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"default_table_expiration_ms": {
+								"computed": false,
+								"new":      "3.6E+06",
+								"old":      "",
+							},
+							"delete_contents_on_destroy": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "This is a test description",
+								"old":      "",
+							},
+							"etag": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"friendly_name": {
+								"computed": false,
+								"new":      "test",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"labels.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"labels.env": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"last_modified_time": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "US",
+								"old":      "",
+							},
+							"project": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"self_link": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"google_service_account": {
+				"bqowner": {
+					0: {
+						"applied": {
+							"account_id":   "bqowner",
+							"description":  null,
+							"disabled":     false,
+							"display_name": null,
+							"timeouts":     null,
+						},
+						"destroy": false,
+						"diff": {
+							"account_id": {
+								"computed": false,
+								"new":      "bqowner",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"disabled": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"display_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"email": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"project": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"unique_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.0.8"
+
+variables = {
+	"access_token": "REDACTED_SENSITIVE",
+	"project_id":   "loyal-network-323515",
+}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources
